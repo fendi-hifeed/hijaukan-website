@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "/hijaukan-cattle.jpg",
           width: 1200,
           height: 630,
-          alt: "HIJAUkan - Sustainable Cattle Farming",
+          alt: "HIJAUkan - Land Restoration Campaign",
         },
       ],
     },
@@ -69,7 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: "/hijaukan-cattle.jpg",
-          alt: "HIJAUkan - Sustainable Cattle Farming",
+          alt: "HIJAUkan - Land Restoration Campaign",
         },
       ],
     },
@@ -109,9 +109,14 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  {/* Canonical + hreflang for search engines */}
+  <link rel="canonical" href={siteUrl} />
+  <link rel="alternate" hrefLang="id" href={`${siteUrl}/?hl=id`} />
+  <link rel="alternate" hrefLang="en" href={`${siteUrl}/?hl=en`} />
+  <link rel="alternate" hrefLang="x-default" href={siteUrl} />
 
-        {/* JSON-LD Structured Data */}
+  {/* JSON-LD Structured Data */}
         <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
