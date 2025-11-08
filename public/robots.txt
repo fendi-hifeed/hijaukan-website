@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hijaukan.co/sitemap.xml
+Host: https://hijaukan.co
