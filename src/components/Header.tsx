@@ -56,10 +56,16 @@ const Header: React.FC = () => {
                                                 </button>
                     </div>
                     <div className="md:hidden flex items-center gap-2">
-                                                <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-hijaukan-light">
-                                                    <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
-                                                    <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
-                                                </div>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-hijaukan-light">
+                            <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
+                            <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
+                        </div>
+
+                        {/* Mobile Donate button placed left of menu toggle */}
+                        <button onClick={() => scrollToSection('donation')} aria-label={locale === 'id' ? 'Donasi Sekarang' : 'Donate Now'} className="bg-hijaukan-green hover:bg-hijaukan-dark text-white px-3 py-2 rounded-full font-semibold text-sm transition-all">
+                            {t('donateCta') as string ?? (locale === 'id' ? 'Donasi Sekarang' : 'Donate Now')}
+                        </button>
+
                         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-hijaukan-green focus:outline-none">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
