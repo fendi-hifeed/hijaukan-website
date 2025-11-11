@@ -81,11 +81,6 @@ const Header: React.FC = () => {
                             {link.label}
                         </a>
                     ))}
-                                        <div className="mt-4">
-                                            <button onClick={() => scrollToSection('donation')} className="bg-hijaukan-green hover:bg-hijaukan-dark text-white px-6 py-2 rounded-full font-semibold w-full transition-all">
-                                                {t('donateCta') as string ?? (locale === 'id' ? 'Donasi Sekarang' : 'Donate Now')}
-                                            </button>
-                                        </div>
                 </div>
             )}
         </nav>
