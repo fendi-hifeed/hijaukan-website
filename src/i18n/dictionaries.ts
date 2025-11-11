@@ -3,6 +3,7 @@ export type Locale = 'en' | 'id';
 export interface NavDict {
 	challenges: string;
 	solution: string;
+	programs?: string;
 	benefits: string;
 	palatability: string;
 	stories: string;
@@ -135,6 +136,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 		nav: {
 				challenges: 'Land Challenges',
 				solution: 'Our Solution',
+				programs: 'Programs',
 				benefits: 'Restoration Benefits',
 				palatability: 'Planting Locations',
 			stories: 'Stories',
@@ -252,6 +254,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			nav: {
 				challenges: 'Tantangan Lahan',
 				solution: 'Solusi Kami',
+				programs: 'Program',
 				benefits: 'Manfaat Restorasi',
 				palatability: 'Lokasi Penanaman',
 			stories: 'Kisah',

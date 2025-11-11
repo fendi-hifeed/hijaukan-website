@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DonationHero from "../components/DonationHero";
+import Programs from "../components/Programs";
 import ProblemStatement from "../components/ProblemStatement";
 import SolutionApproach from "../components/SolutionApproach";
 import ImpactDetails from "../components/ImpactDetails";
@@ -183,8 +184,11 @@ export default function Home() {
           />
         </section>
 
-        {/* Impact Counter */}
-        <ImpactCounter />
+  {/* Programs Section (moved below Solution Approach) */}
+  <Programs />
+
+  {/* Impact Counter */}
+  <ImpactCounter />
 
         {/* Impact Details & Packages */}
         <section id="benefits">

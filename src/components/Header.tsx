@@ -17,12 +17,12 @@ const Header: React.FC = () => {
     };
 
     const navLinks = [
+        { href: 'programs', label: t('programs') as string },
         { href: 'challenges', label: t('challenges') as string },
         { href: 'solution', label: t('solution') as string },
         { href: 'benefits', label: t('benefits') as string },
         { href: 'palatability', label: t('palatability') as string },
         { href: 'stories', label: t('stories') as string },
-        { href: 'donation', label: locale === 'id' ? 'Donasi' : 'Donate' },
     ];
 
     return (
@@ -49,12 +49,9 @@ const Header: React.FC = () => {
                             </a>
                         ))}
                                                 <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-hijaukan-light">
-                                                    <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
-                                                    <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
-                                                </div>
-                        <button onClick={() => scrollToSection('donation')} className="bg-hijaukan-green hover:bg-hijaukan-dark text-white px-6 py-2 rounded-full font-semibold transition-all scale-hover">
-                            {locale === 'id' ? 'Donasi Sekarang' : 'Donate Now'}
-                        </button>
+                                                                            <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
+                                                                            <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
+                                                                        </div>
                     </div>
                     <div className="md:hidden flex items-center gap-2">
                                                 <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-hijaukan-light">
@@ -76,9 +73,6 @@ const Header: React.FC = () => {
                             {link.label}
                         </a>
                     ))}
-                    <button onClick={() => scrollToSection('donation')} className="bg-hijaukan-green hover:bg-hijaukan-dark text-white px-6 py-2 rounded-full font-semibold w-full mt-4 transition-all">
-                        {locale === 'id' ? 'Donasi Sekarang' : 'Donate Now'}
-                    </button>
                 </div>
             )}
         </nav>
