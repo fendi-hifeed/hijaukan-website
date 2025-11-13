@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center bounce-gentle overflow-hidden relative">
                             <Image 
                                 src="/hijaukan_logo.png" 
-                                alt="HIJAUkan logo" 
+                                alt="KitaHIJAUkan logo" 
                                 fill
                                 className="object-contain"
                                 sizes="(max-width: 640px) 48px, 64px"

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { useTranslations } from '../i18n/LocaleProvider';
+import { useTranslations, useLocale } from '../i18n/LocaleProvider';
 
 interface KitabisaEmbedProps {
   campaignUrl: string;
@@ -16,6 +16,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
 }) => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const t = useTranslations('donasi');
+  const { locale } = useLocale();
 
   useEffect(() => {
     // Handle iframe responsive behavior
@@ -81,7 +82,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
               <iframe
                 ref={iframeRef}
                 src={campaignUrl}
-                title="Kitabisa Campaign - HIJAUkan Indonesia"
+                title="Kitabisa Campaign - KitaHIJAUkan Indonesia"
                 className="w-full border-0"
                 style={{ minHeight: '600px' }}
                 allowFullScreen
@@ -141,11 +142,13 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
             <p className="text-gray-700 mb-3">
               {t('kitabisaSocial2Desc') as string}
             </p>
-            <a 
-              href="mailto:hello@hijaukan.co"
+            <a
+              href="https://instagram.com/kitahijaukan"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-hijaukan-green font-bold hover:underline"
             >
-              <span>hello@hijaukan.co</span>
+              <span>{locale === 'id' ? 'Hubungi Tim Kami di Instagram' : 'Contact Our Team on Instagram'}</span>
               <span>📧</span>
             </a>
           </div>

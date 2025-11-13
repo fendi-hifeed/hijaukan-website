@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { useTranslations } from "../i18n/LocaleProvider";
+import { useTranslations, useLocale } from "../i18n/LocaleProvider";
 
 const Footer: React.FC = () => {
     const t = useTranslations('footer');
+    const { locale } = useLocale();
     return (
     <footer className="bg-hijaukan-gray text-gray-600 py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,14 +34,18 @@ const Footer: React.FC = () => {
                                     sizes="48px"
                                 />
                             </div>
-                            <div className="text-3xl font-bold text-hijaukan-green">HIJAUkan</div>
+                            <div className="text-3xl font-bold text-hijaukan-green">KitaHIJAUkan</div>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-6">{t('about') as string}</p>
                         <div className="space-y-1 text-sm">
                           <div className="font-semibold">{t('addressTitle') as string}</div>
                           <div>{t('company') as string}</div>
                           <div>{t('address') as string}</div>
-                          <div><a href="mailto:hello@hijaukan.co" className="hover:text-hijaukan-green">{t('email') as string}</a></div>
+                                                                                                            <div>
+                                                                                                                <a href="https://instagram.com/kitahijaukan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 hover:text-hijaukan-green">
+                                                                                                                    <span>{locale === 'id' ? 'Instagram @kitahijaukan' : 'Instagram @kitahijaukan'}</span>
+                                                                                                                </a>
+                                                                                                            </div>
                         </div>
                     </div>
                     <div>
@@ -63,7 +68,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="border-t border-gray-200 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-gray-500 text-center md:text-left">&copy; {new Date().getFullYear()} HIJAUkan. {t('copyright') as string}</p>
+                        <p className="text-gray-500 text-center md:text-left">&copy; {new Date().getFullYear()} KitaHIJAUkan. {t('copyright') as string}</p>
                         <div className="flex space-x-4 mt-4 md:mt-0">
                                      <a href="https://www.linkedin.com/company/hijaukanx" target="_blank" rel="noopener noreferrer" className="bg-hijaukan-light w-10 h-10 rounded-xl flex items-center justify-center hover:bg-hijaukan-green/20 transition-all scale-hover" aria-label="LinkedIn">
                                          <span className="text-sm font-bold text-hijaukan-green">in</span>

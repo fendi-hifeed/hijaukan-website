@@ -121,12 +121,14 @@ const FAQSection: React.FC = () => {
               ? 'Masih punya pertanyaan lain?' 
               : 'Still have other questions?'}
           </p>
-          <a 
-            href="mailto:hello@hijaukan.co"
+          <a
+            href="https://instagram.com/kitahijaukan"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 text-hijaukan-green font-bold hover:underline"
           >
             <span>💬</span>
-            <span>{locale === 'id' ? 'Hubungi Tim Kami' : 'Contact Our Team'}</span>
+            <span>{locale === 'id' ? 'Hubungi Tim Kami di Instagram' : 'Contact Our Team on Instagram'}</span>
           </a>
         </div>
       </div>
