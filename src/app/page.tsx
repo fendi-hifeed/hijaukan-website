@@ -14,6 +14,8 @@ import { useTranslations } from "../i18n/LocaleProvider";
 import ImpactCounter from "../components/ImpactCounter";
 import TestimonialStrip from "../components/TestimonialStrip";
 import FAQSection from "../components/FAQSection";
+import ProjectTimeline from "../components/ProjectTimeline";
+import type { TimelineStep } from "../i18n/dictionaries";
 
 const filterKitabisaErrors = (event: ErrorEvent | PromiseRejectionEvent) => {
   const message = 'reason' in event ? String(event.reason) : event.message;
@@ -108,6 +110,8 @@ export default function Home() {
     }
   ];
 
+  const timelineSteps = (t('timelineSteps') as TimelineStep[]) || [];
+
   // Donation packages
   const donationPackages = [
     {
@@ -184,6 +188,17 @@ export default function Home() {
           />
         </section>
 
+        {/* Project Timeline */}
+        <section id="timeline" className="py-20 px-4 bg-gradient-to-b from-hijaukan-dark to-black">
+          <ProjectTimeline
+            title={t('timelineTitle') as string}
+            subtitle={t('timelineSubtitle') as string}
+            steps={timelineSteps}
+            ctaText={t('timelineCta') as string}
+            onCtaClick={scrollToDonation}
+          />
+        </section>
+
   {/* Programs Section (moved below Solution Approach) */}
   <Programs />
 
@@ -205,14 +220,6 @@ export default function Home() {
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-hijaukan-dark mb-4">{t('locationsTitle') as string}</h2>
             <p className="text-gray-700 max-w-3xl mx-auto">{t('locationsDesc') as string}</p>
-          </div>
-        </section>
-
-        {/* Stories Section (placeholder) */}
-        <section id="stories" className="py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-hijaukan-dark mb-4">{t('storiesTitle') as string}</h2>
-            <p className="text-gray-700 mb-6">{t('storiesDesc') as string}</p>
           </div>
         </section>
 

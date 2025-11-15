@@ -20,9 +20,9 @@ const Header: React.FC = () => {
         { href: 'programs', label: t('programs') as string },
         { href: 'challenges', label: t('challenges') as string },
         { href: 'solution', label: t('solution') as string },
+        { href: 'timeline', label: t('timeline') as string },
         { href: 'benefits', label: t('benefits') as string },
         { href: 'palatability', label: t('palatability') as string },
-        { href: 'stories', label: t('stories') as string },
     ];
 
     return (

@@ -6,10 +6,17 @@ export interface NavDict {
 	programs?: string;
 	benefits: string;
 	palatability: string;
-	stories: string;
+	timeline: string;
 	careers: string;
 	donateCta?: string;
 	language: string;
+}
+
+export interface TimelineStep {
+	phase: string;
+	title: string;
+	description: string;
+	duration: string;
 }
 
 export interface FooterDict {
@@ -57,6 +64,12 @@ export interface DonasiDict {
 	approach2Desc: string;
 	approach3Title: string;
 	approach3Desc: string;
+
+	// Timeline
+	timelineTitle: string;
+	timelineSubtitle: string;
+	timelineCta: string;
+	timelineSteps: TimelineStep[];
 	
 	// Impact Details
 	impactTitle: string;
@@ -100,10 +113,6 @@ export interface DonasiDict {
 	locationsTitle: string;
 	locationsDesc: string;
 	
-	// Stories
-	storiesTitle: string;
-	storiesDesc: string;
-	
 	// Kitabisa
 	kitabisaTitle: string;
 	kitabisaSubtitle: string;
@@ -139,7 +148,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				programs: 'Programs',
 				benefits: 'Restoration Benefits',
 				palatability: 'Planting Locations',
-			stories: 'Stories',
+			timeline: 'Project Timeline',
 			careers: 'Careers',
 			donateCta: 'Donate Now',
 			language: 'Language',
@@ -155,7 +164,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			feedTech: 'Restoration Program',
 			costReduction: 'Restoration Benefits',
 			carbonImpact: 'Restoration Impact',
-			successStories: 'Field Stories',
+			successStories: 'Project Timeline',
 			supportMenu: 'Support',
 			privacyPolicy: 'Privacy Policy',
 			termsOfService: 'Terms of Service',
@@ -164,31 +173,41 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			partnersDesc: 'Trusted partners and supporters',
 		},
 		donasi: {
-			heroTitle: 'KitaHIJAUkan Indonesia: Build a Sustainable Ecosystem Now!',
-			heroSubtitle: 'Every Hectare of Degraded Land is a Step Backward for Indonesia',
-			heroDescription: 'Land degradation threatens ecological balance and national food security. Degraded land is not only vulnerable to disasters, but also loses its capacity as a vital natural carbon sink. This is a crucial challenge we must face together.',
+			heroTitle: 'KitaHIJAUkan Indonesia: Restore Land, Guard Climate',
+			heroSubtitle: 'Critical land keeps expanding—so must our response.',
+			heroDescription: 'Degraded soil means floods, crop loss, and stalled climate goals. Your donation revives the land and the farmers caring for it.',
 			heroCtaText: 'Start Contributing Now',
 			
-			problemSectionTitle: 'Protect Critical Lands — Act Now for the Climate',
-			problem1Title: 'Loss of Water Absorption Capacity',
-			problem1Desc: 'Degraded soil cannot absorb water properly, causing floods in the rainy season and drought in the dry season.',
-			problem2Title: 'Declining Carbon Absorption',
-			problem2Desc: 'Damaged land loses its function as a natural carbon sink, worsening climate change and air quality.',
-			problem3Title: 'Food Security Threat',
-			problem3Desc: 'Land degradation threatens agricultural productivity and national food security for future generations.',
+			problemSectionTitle: 'Save Critical Lands Now',
+			problem1Title: 'Water Absorption Collapse',
+			problem1Desc: 'Damaged soil cannot hold rain, so floods arrive faster and droughts drag longer.',
+			problem2Title: 'Carbon Sink Vanishes',
+			problem2Desc: 'Without trees, the land stops absorbing carbon and heat lingers in our air.',
+			problem3Title: 'Food Supply Disruption',
+			problem3Desc: 'Missing soil nutrients shrink harvests and push food prices higher.',
 			
 			solutionSectionTitle: 'KitaHIJAUkan Indonesia Program',
-			solutionSectionSubtitle: 'Shift from concern to Real Action. We invite you not just to preserve, but to GREENIZE massively and structurally!',
+			solutionSectionSubtitle: 'Simple path: map, plant, care, and share the progress.',
 			solutionCallToAction: "Let's together we can KitaHIJAUkan Indonesia",
 			approach1Title: 'Collaboration with Farmers & Communities',
-			approach1Desc: 'We work directly with local farmers and environmental communities to ensure restoration programs run sustainably and provide direct benefits to the community.',
+			approach1Desc: 'Local farmers lead each plot so the benefits stay with the village.',
 			approach2Title: 'Structured & Measured Planting',
-			approach2Desc: 'Every tree is planted in mapped critical land locations. Intensive 1-year care program ensures high growth success rates.',
+			approach2Desc: 'Trees grow on mapped acres with one-year care already funded.',
 			approach3Title: 'Monitoring & Full Transparency',
-			approach3Desc: 'Get regular updates via Instagram @kitahijaukan. We document every stage from barren land to green again.',
+			approach3Desc: 'Every phase is documented and shared openly on Instagram @kitahijaukan.',
+			
+			timelineTitle: 'Project Journey',
+			timelineSubtitle: 'Track how your rupiah moves from mapping to public reporting.',
+			timelineCta: 'Support the next phase',
+			timelineSteps: [
+				{ phase: '01', title: 'Map & agree', description: 'Survey critical plots, sign farmer consent, and log baselines.', duration: 'Week 1' },
+				{ phase: '02', title: 'Nursery & prep', description: 'Grow seedlings, fix soil structure, and stage tools on-site.', duration: 'Week 2-4' },
+				{ phase: '03', title: 'Plant & care', description: 'Plant mixed species, water weekly, and record growth with locals.', duration: 'Month 2-4' },
+				{ phase: '04', title: 'Report & loop', description: 'Publish progress, invite visits, and roll learnings into the next batch.', duration: 'Month 5+' },
+			],
 			
 			impactTitle: 'Your Contribution Details',
-			impactSubtitle: 'Your contribution will directly impact critical land restoration across Indonesia',
+			impactSubtitle: 'Each package funds planting plus farmer labor on the ground',
 			oneTreeCost: 'IDR 50,000',
 			oneTreeTitle: 'One Tree of Hope',
 			oneTreeDesc: '1 Tree + 1 Year Care',
@@ -213,22 +232,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			popularBadge: '⭐ Most Popular',
 			selectPackageBtn: 'Choose This Package',
 			highlight1Title: '1 Tree = IDR 50,000',
-			highlight1Desc: 'Including planting costs and intensive care for 1 full year at critical land locations',
+			highlight1Desc: 'Covers seedlings, planting, and 12 months of care at the site.',
 			highlight2Title: 'Methane & CO₂ Absorber',
-			highlight2Desc: 'Every tree becomes a greenhouse gas absorber from the air, making our air cleaner',
+			highlight2Desc: 'Each tree pulls greenhouse gases from the air to cool the area.',
 			highlight3Title: 'Regular Updates',
-			highlight3Desc: 'Monitor progress on Instagram @kitahijaukan',
+			highlight3Desc: 'Progress is shared openly on Instagram @kitahijaukan.',
 			highlight4Title: 'Target 1,000 Hectares',
-			highlight4Desc: "Let's achieve this year's land restoration target together",
-			urgencyTitle: "Don't Let Our Land Suffer Longer",
-			urgencyDesc: 'Every passing day is a lost opportunity to save our land',
+			highlight4Desc: 'Help us reopen 1,000 hectares of healthy cover this year.',
+			urgencyTitle: 'Act before another rainy season erodes the land.',
+			urgencyDesc: 'Today’s support keeps soil alive for tomorrow’s harvest.',
 			urgencyCta: '🔥 Start Donating Now',
 			
 			locationsTitle: 'Planting Locations',
-			locationsDesc: 'Planting will be carried out on critical lands that have been mapped in collaboration with local farmers and communities. Priority locations include areas degraded by erosion and unsustainable agricultural practices.',
-			
-			storiesTitle: 'Field Stories',
-			storiesDesc: 'Watch inspiring stories of farmers and communities who have successfully restored their land to productive and green again — photo documentation and field reports will be published here.',
+			locationsDesc: 'Current focus: Lampung and Sumatra plots mapped with partner communities.',
 			
 			kitabisaTitle: 'Donate Through Kitabisa',
 			kitabisaSubtitle: 'Channel your contribution through a trusted platform',
@@ -257,7 +273,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				programs: 'Program',
 				benefits: 'Manfaat Restorasi',
 				palatability: 'Lokasi Penanaman',
-			stories: 'Kisah',
+			timeline: 'Timeline Proyek',
 			careers: 'Karir',
 			donateCta: 'Donasi Sekarang',
 			language: 'Bahasa',
@@ -273,7 +289,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			feedTech: 'Program Restorasi',
 			costReduction: 'Manfaat Restorasi',
 			carbonImpact: 'Dampak Restorasi',
-			successStories: 'Kisah Lapangan',
+			successStories: 'Timeline Proyek',
 			supportMenu: 'Dukungan',
 			privacyPolicy: 'Kebijakan Privasi',
 			termsOfService: 'Syarat Layanan',
@@ -282,31 +298,41 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			partnersDesc: 'Mitra dan pendukung terpercaya',
 		},
 		donasi: {
-			heroTitle: 'KitaHIJAUkan Indonesia: Wujudkan Ekosistem Berkelanjutan Sekarang!',
-			heroSubtitle: 'Setiap Hektar Lahan yang Terdegradasi adalah Langkah Mundur bagi Indonesia',
-			heroDescription: 'Degradasi lahan mengancam keseimbangan alam dan ketahanan pangan nasional. Lahan yang terdegradasi tidak hanya rentan terhadap bencana, tetapi juga kehilangan kemampuannya sebagai penyerap karbon alami yang vital. Ini adalah tantangan krusial yang harus kita hadapi bersama.',
+			heroTitle: 'KitaHIJAUkan Indonesia: Pulihkan Lahan, Jaga Iklim',
+			heroSubtitle: 'Lahan kritis makin meluas—aksi kita harus ikut membesar.',
+			heroDescription: 'Tanah rusak berarti banjir, gagal panen, dan target iklim mandek. Donasimu menghidupkan lagi lahan dan petaninya.',
 			heroCtaText: 'Mulai Berkontribusi Sekarang',
 			
-			problemSectionTitle: 'TANAH KITA MENJERIT: Selamatkan Lahan Kritis Sekarang!',
-			problem1Title: 'Kehilangan Kemampuan Menyerap Air',
-			problem1Desc: 'Tanah yang terdegradasi tidak dapat menyerap air dengan baik, menyebabkan banjir di musim hujan dan kekeringan di musim kemarau.',
-			problem2Title: 'Penurunan Penyerapan Karbon',
-			problem2Desc: 'Lahan rusak kehilangan fungsinya sebagai penyerap karbon alami, memperburuk perubahan iklim dan kualitas udara.',
-			problem3Title: 'Ancaman Ketahanan Pangan',
-			problem3Desc: 'Degradasi lahan mengancam produktivitas pertanian dan ketahanan pangan nasional untuk generasi mendatang.',
+			problemSectionTitle: 'Selamatkan Lahan Kritis Sekarang',
+			problem1Title: 'Serapan air runtuh',
+			problem1Desc: 'Tanah rusak tak bisa menahan hujan, banjir datang cepat dan kemarau makin panjang.',
+			problem2Title: 'Penyerap karbon hilang',
+			problem2Desc: 'Tanpa tutupan pohon, tanah berhenti menyerap karbon dan panas terjebak.',
+			problem3Title: 'Rantai pangan terganggu',
+			problem3Desc: 'Nutrisi hilang, panen turun, dan harga pangan ikut melonjak.',
 			
 			solutionSectionTitle: 'Program KitaHIJAUkan Indonesia',
-			solutionSectionSubtitle: 'Beralih dari kepedulian menjadi Aksi Nyata. Kami mengajak kamu untuk tidak hanya menjaga, tetapi juga MENGHIJAUKAN secara masif dan terstruktur!',
+			solutionSectionSubtitle: 'Alurnya jelas: petakan, tanam, rawat, laporkan.',
 			solutionCallToAction: 'Ayo bersama kita bisa KitaHIJAUkan Indonesia',
 			approach1Title: 'Kolaborasi dengan Petani & Komunitas',
-			approach1Desc: 'Kami bekerja langsung dengan petani lokal dan komunitas lingkungan untuk memastikan program restorasi berjalan berkelanjutan dan memberikan manfaat langsung kepada masyarakat.',
+			approach1Desc: 'Petani lokal memimpin tiap petak agar manfaat tinggal di kampung.',
 			approach2Title: 'Penanaman Terstruktur & Terukur',
-			approach2Desc: 'Setiap pohon ditanam di lokasi lahan kritis yang telah dipetakan. Program perawatan intensif selama 1 tahun memastikan tingkat keberhasilan tumbuh yang tinggi.',
+			approach2Desc: 'Pohon ditanam di lahan terpetakan dengan paket rawat satu tahun.',
 			approach3Title: 'Monitoring & Transparansi Penuh',
-			approach3Desc: 'Dapatkan update berkala melalui Instagram @kitahijaukan. Kami dokumentasikan setiap tahap dari lahan gersang hingga menghijau kembali.',
+			approach3Desc: 'Setiap tahap terdokumentasi dan dibagikan di Instagram @kitahijaukan.',
+			
+			timelineTitle: 'Timeline Proyek',
+			timelineSubtitle: 'Lihat perjalanan donasimu dari pemetaan hingga laporan publik.',
+			timelineCta: 'Dukung fase berikutnya',
+			timelineSteps: [
+				{ phase: '01', title: 'Pemetaan & persetujuan', description: 'Survey lahan kritis, tandatangani persetujuan petani, catat baseline sederhana.', duration: 'Minggu 1' },
+				{ phase: '02', title: 'Pembibitan & persiapan', description: 'Tumbuhkan bibit, perbaiki struktur tanah, siapkan alat dekat lokasi.', duration: 'Minggu 2-4' },
+				{ phase: '03', title: 'Tanam & rawat', description: 'Tanam campuran spesies, siram mingguan, dan catat tumbuh bersama tim lokal.', duration: 'Bulan 2-4' },
+				{ phase: '04', title: 'Lapor & ulangi', description: 'Rilis progres, buka kunjungan, dan pakai data untuk batch selanjutnya.', duration: 'Bulan 5+' },
+			],
 			
 			impactTitle: 'Detail Kontribusi Kamu',
-			impactSubtitle: 'Kontribusi kamu akan langsung berdampak pada restorasi lahan kritis di seluruh Indonesia',
+			impactSubtitle: 'Setiap paket membiayai penanaman plus tenaga petani di lapangan',
 			oneTreeCost: 'Rp 50.000',
 			oneTreeTitle: 'Satu Pohon Harapan',
 			oneTreeDesc: '1 Pohon + Perawatan 1 Tahun',
@@ -331,22 +357,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			popularBadge: '⭐ Paling Populer',
 			selectPackageBtn: 'Pilih Paket Ini',
 			highlight1Title: '1 Pohon = Rp 50.000',
-			highlight1Desc: 'Termasuk biaya penanaman dan perawatan intensif selama 1 tahun penuh di lokasi lahan kritis',
+			highlight1Desc: 'Sudah termasuk biaya bibit, tanam, dan perawatan 12 bulan.',
 			highlight2Title: 'Penyerap Metana & CO₂',
-			highlight2Desc: 'Setiap pohon menjadi penyerap gas rumah kaca dari udara, membuat udara kita lebih bersih',
+			highlight2Desc: 'Setiap pohon menyerap gas rumah kaca dan mendinginkan area sekitar.',
 			highlight3Title: 'Update Berkala',
-			highlight3Desc: 'Pantau perkembangan di Instagram @kitahijaukan',
+			highlight3Desc: 'Update dibagikan rutin di Instagram @kitahijaukan.',
 			highlight4Title: 'Target 1.000 Hektar',
-			highlight4Desc: 'Mari capai target restorasi lahan tahun ini bersama-sama',
-			urgencyTitle: 'Jangan Biarkan Lahan Kita Sakit Lebih Lama',
-			urgencyDesc: 'Setiap hari yang berlalu adalah kesempatan yang hilang untuk menyelamatkan tanah kita',
+			highlight4Desc: 'Bantu wujudkan kembali 1.000 hektar tutupan hijau.',
+			urgencyTitle: 'Jangan tunggu musim hujan berikutnya.',
+			urgencyDesc: 'Dukungan hari ini menjaga tanah untuk panen besok.',
 			urgencyCta: '🔥 Mulai Donasi Sekarang',
 			
 			locationsTitle: 'Lokasi Penanaman',
-			locationsDesc: 'Penanaman akan dilakukan di lahan-lahan kritis yang telah dipetakan bekerja sama dengan petani lokal dan komunitas. Lokasi prioritas termasuk daerah terdegradasi akibat erosi dan praktik pertanian tidak berkelanjutan.',
-			
-			storiesTitle: 'Kisah Lapangan',
-			storiesDesc: 'Simak kisah inspiratif petani dan komunitas yang berhasil mengembalikan lahan mereka menjadi produktif dan hijau kembali — dokumentasi foto dan laporan medan akan dipublikasikan di sini.',
+			locationsDesc: 'Fokus awal di Lampung dan Sumatra hasil pemetaan bersama komunitas mitra.',
 			
 			kitabisaTitle: 'Donasi Melalui Kitabisa',
 			kitabisaSubtitle: 'Salurkan kontribusi kamu melalui platform terpercaya',

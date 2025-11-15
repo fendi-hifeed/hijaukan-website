@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                             <li><a href="#solution" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('feedTech') as string}</a></li>
                             <li><a href="#benefits" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('costReduction') as string}</a></li>
                             <li><a href="#benefits" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('carbonImpact') as string}</a></li>
-                            <li><a href="#stories" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('successStories') as string}</a></li>
+                            <li><a href="#timeline" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('successStories') as string}</a></li>
                         </ul>
                     </div>
                     <div>
