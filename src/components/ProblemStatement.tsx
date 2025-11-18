@@ -19,6 +19,17 @@ const ProblemStatement: React.FC<ProblemStatementProps> = ({ title, problems }) 
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
+          {/* SDG icons — show above the title; responsive sizes (bigger on desktop) */}
+          <div className="flex items-center justify-center mb-4 space-x-4 md:space-x-6 lg:space-x-10 xl:space-x-12">
+            <img src="/E_WEB_01.png" alt="SDG 1 - No Poverty" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_04.png" alt="SDG 4 - Quality Education" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_11.png" alt="SDG 11 - Sustainable Cities" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_12.png" alt="SDG 12 - Responsible Consumption" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_13.png" alt="SDG 13 - Climate Action" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_15.png" alt="SDG 15 - Life on Land" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+            <img src="/E_WEB_17.png" alt="SDG 17 - Partnerships" className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-sm shadow-sm" />
+          </div>
+
           <h2 className="text-3xl md:text-5xl font-bold text-hijaukan-dark mb-6">
             {title}
           </h2>
