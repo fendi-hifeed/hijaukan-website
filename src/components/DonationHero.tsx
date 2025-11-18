@@ -45,6 +45,18 @@ const DonationHero: React.FC<DonationHeroProps> = ({
             {description}
           </p>
 
+          {/* Video Trailer (Google Drive preview) */}
+          <div className="max-w-xl mx-auto mt-8">
+            <div className="relative" style={{ paddingTop: '56.25%' }}>
+              <iframe
+                src="https://drive.google.com/file/d/16RuZu3UQKKO027FwjbTddciUTz1Fw72B/preview"
+                className="absolute inset-0 w-full h-full border-0 rounded-lg shadow-2xl"
+                allowFullScreen
+                title={locale === 'id' ? 'Trailer Kampanye' : 'Campaign Trailer'}
+              />
+            </div>
+          </div>
+
           {/* CTA Button */}
           <div className="pt-8">
             <button
