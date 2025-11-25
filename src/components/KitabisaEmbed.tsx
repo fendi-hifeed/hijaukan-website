@@ -9,8 +9,8 @@ interface KitabisaEmbedProps {
   subtitle?: string;
 }
 
-const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({ 
-  campaignUrl, 
+const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
+  campaignUrl,
   title,
   subtitle
 }) => {
@@ -82,7 +82,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
               <iframe
                 ref={iframeRef}
                 src={campaignUrl}
-                title="Kitabisa Campaign - KitaHIJAUkan Indonesia"
+                title="Amartha Care to Grow - KitaHIJAUkan Indonesia"
                 className="w-full border-0"
                 style={{ minHeight: '600px' }}
                 allowFullScreen
@@ -104,8 +104,8 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     (window as any).dataLayer = (window as any).dataLayer || [];
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    (window as any).dataLayer.push({ event: 'donate_cta_click', source: 'kitabisa_button' });
-                  } catch {}
+                    (window as any).dataLayer.push({ event: 'donate_cta_click', source: 'amartha_button' });
+                  } catch { }
                 }}
                 className="inline-block bg-hijaukan-green text-white font-bold px-8 py-4 rounded-full hover:bg-hijaukan-dark transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -124,9 +124,9 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
             <p className="text-gray-700 mb-3">
               {t('kitabisaSocial1Desc') as string}
             </p>
-            <a 
-              href="https://instagram.com/kitahijaukan" 
-              target="_blank" 
+            <a
+              href="https://instagram.com/kitahijaukan"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-hijaukan-green font-bold hover:underline"
             >

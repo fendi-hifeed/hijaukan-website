@@ -229,10 +229,10 @@ export default function Home() {
         {/* FAQ Section */}
         <FAQSection />
 
-        {/* Kitabisa Embed */}
+        {/* Amartha Embed */}
         <div ref={donationSectionRef} id="donation">
           <KitabisaEmbed
-            campaignUrl="https://kitabisa.com/campaign/semangatrestorasihutan"
+            campaignUrl="https://empower.amartha.com/caretogrow/"
             title={t('kitabisaTitle') as string}
             subtitle={t('kitabisaSubtitle') as string}
           />

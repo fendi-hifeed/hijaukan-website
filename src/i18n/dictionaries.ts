@@ -44,7 +44,7 @@ export interface DonasiDict {
 	heroSubtitle: string;
 	heroDescription: string;
 	heroCtaText: string;
-	
+
 	// Problems
 	problem1Title: string;
 	problem1Desc: string;
@@ -53,7 +53,7 @@ export interface DonasiDict {
 	problem3Title: string;
 	problem3Desc: string;
 	problemSectionTitle: string;
-	
+
 	// Solution
 	solutionSectionTitle: string;
 	solutionSectionSubtitle: string;
@@ -70,7 +70,7 @@ export interface DonasiDict {
 	timelineSubtitle: string;
 	timelineCta: string;
 	timelineSteps: TimelineStep[];
-	
+
 	// Impact Details
 	impactTitle: string;
 	impactSubtitle: string;
@@ -108,11 +108,11 @@ export interface DonasiDict {
 	urgencyTitle: string;
 	urgencyDesc: string;
 	urgencyCta: string;
-	
+
 	// Planting Locations
 	locationsTitle: string;
 	locationsDesc: string;
-	
+
 	// Kitabisa
 	kitabisaTitle: string;
 	kitabisaSubtitle: string;
@@ -143,11 +143,11 @@ export interface Dictionary {
 export const dictionaries: Record<Locale, Dictionary> = {
 	en: {
 		nav: {
-				challenges: 'Land Challenges',
-				solution: 'Our Solution',
-				programs: 'Programs',
-				benefits: 'Restoration Benefits',
-				palatability: 'Planting Locations',
+			challenges: 'Land Challenges',
+			solution: 'Our Solution',
+			programs: 'Programs',
+			benefits: 'Restoration Benefits',
+			palatability: 'Planting Locations',
 			timeline: 'Project Timeline',
 			careers: 'Careers',
 			donateCta: 'Donate Now',
@@ -177,7 +177,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			heroSubtitle: 'Critical land keeps expanding—so must our response.',
 			heroDescription: 'Degraded soil means floods, crop loss, and stalled climate goals. Your donation revives the land and the farmers caring for it.',
 			heroCtaText: 'Start Contributing Now',
-			
+
 			problemSectionTitle: 'Save Critical Lands Now',
 			problem1Title: 'Water Absorption Collapse',
 			problem1Desc: 'Damaged soil cannot hold rain, so floods arrive faster and droughts drag longer.',
@@ -185,7 +185,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			problem2Desc: 'Without trees, the land stops absorbing carbon and heat lingers in our air.',
 			problem3Title: 'Food Supply Disruption',
 			problem3Desc: 'Missing soil nutrients shrink harvests and push food prices higher.',
-			
+
 			solutionSectionTitle: 'KitaHIJAUkan Indonesia Program',
 			solutionSectionSubtitle: 'Simple path: map, plant, care, and share the progress.',
 			solutionCallToAction: "Let's together we can KitaHIJAUkan Indonesia",
@@ -195,7 +195,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			approach2Desc: 'Trees grow on mapped acres with one-year care already funded.',
 			approach3Title: 'Monitoring & Full Transparency',
 			approach3Desc: 'Every phase is documented and shared openly on Instagram @kitahijaukan.',
-			
+
 			timelineTitle: 'Project Journey',
 			timelineSubtitle: 'Track how your rupiah moves from mapping to public reporting.',
 			timelineCta: 'Support the next phase',
@@ -205,7 +205,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				{ phase: '03', title: 'Plant & care', description: 'Plant mixed species, water weekly, and record growth with locals.', duration: 'Month 2-4' },
 				{ phase: '04', title: 'Report & loop', description: 'Publish progress, invite visits, and roll learnings into the next batch.', duration: 'Month 5+' },
 			],
-			
+
 			impactTitle: 'Your Contribution Details',
 			impactSubtitle: 'Each package funds planting plus farmer labor on the ground',
 			oneTreeCost: 'IDR 50,000',
@@ -242,22 +242,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			urgencyTitle: 'Act before another rainy season erodes the land.',
 			urgencyDesc: 'Today’s support keeps soil alive for tomorrow’s harvest.',
 			urgencyCta: '🔥 Start Donating Now',
-			
+
 			locationsTitle: 'Planting Locations',
 			locationsDesc: 'Current focus: Lampung and Sumatra plots mapped with partner communities.',
-			
-			kitabisaTitle: 'Donate Through Kitabisa',
+
+			kitabisaTitle: 'Donate Through Amartha Care to Grow',
 			kitabisaSubtitle: 'Channel your contribution through a trusted platform',
 			kitabisaTrust1: 'Safe & Trusted',
-			kitabisaTrust1Desc: "Indonesia's trusted donation platform",
+			kitabisaTrust1Desc: "Indonesia's trusted empowerment platform",
 			kitabisaTrust2: 'Various Methods',
 			kitabisaTrust2Desc: 'Bank transfer, e-wallet, credit card',
 			kitabisaTrust3: 'Transparent',
 			kitabisaTrust3Desc: 'Track every rupiah you donate',
-			kitabisaHashtag: '#KitaHIJAUkanIndonesia #RestorasiLahan',
+			kitabisaHashtag: '#CareToGrow #KitaHIJAUkanIndonesia',
 			kitabisaHashtagDesc: 'Every contribution means for a greener Indonesia',
 			kitabisaDirectText: 'Or visit the campaign page directly:',
-			kitabisaDirectBtn: 'Open on Kitabisa.com →',
+			kitabisaDirectBtn: 'Open on Amartha →',
 			kitabisaSocial1Title: '📱 Follow Our Progress',
 			kitabisaSocial1Desc: 'Get regular updates on every planting and land development at:',
 			kitabisaSocial2Title: '💬 Have Questions?',
@@ -267,12 +267,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
 		},
 	},
 	id: {
-			nav: {
-				challenges: 'Tantangan Lahan',
-				solution: 'Solusi Kami',
-				programs: 'Program',
-				benefits: 'Manfaat Restorasi',
-				palatability: 'Lokasi Penanaman',
+		nav: {
+			challenges: 'Tantangan Lahan',
+			solution: 'Solusi Kami',
+			programs: 'Program',
+			benefits: 'Manfaat Restorasi',
+			palatability: 'Lokasi Penanaman',
 			timeline: 'Timeline Proyek',
 			careers: 'Karir',
 			donateCta: 'Donasi Sekarang',
@@ -302,7 +302,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			heroSubtitle: 'Lahan kritis makin meluas—aksi kita harus ikut membesar.',
 			heroDescription: 'Tanah rusak berarti banjir, gagal panen, dan target iklim mandek. Donasimu menghidupkan lagi lahan dan petaninya.',
 			heroCtaText: 'Mulai Berkontribusi Sekarang',
-			
+
 			problemSectionTitle: 'Selamatkan Lahan Kritis Sekarang',
 			problem1Title: 'Serapan air runtuh',
 			problem1Desc: 'Tanah rusak tak bisa menahan hujan, banjir datang cepat dan kemarau makin panjang.',
@@ -310,7 +310,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			problem2Desc: 'Tanpa tutupan pohon, tanah berhenti menyerap karbon dan panas terjebak.',
 			problem3Title: 'Rantai pangan terganggu',
 			problem3Desc: 'Nutrisi hilang, panen turun, dan harga pangan ikut melonjak.',
-			
+
 			solutionSectionTitle: 'Program KitaHIJAUkan Indonesia',
 			solutionSectionSubtitle: 'Alurnya jelas: petakan, tanam, rawat, laporkan.',
 			solutionCallToAction: 'Ayo bersama kita bisa KitaHIJAUkan Indonesia',
@@ -320,7 +320,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			approach2Desc: 'Pohon ditanam di lahan terpetakan dengan paket rawat satu tahun.',
 			approach3Title: 'Monitoring & Transparansi Penuh',
 			approach3Desc: 'Setiap tahap terdokumentasi dan dibagikan di Instagram @kitahijaukan.',
-			
+
 			timelineTitle: 'Timeline Proyek',
 			timelineSubtitle: 'Lihat perjalanan donasimu dari pemetaan hingga laporan publik.',
 			timelineCta: 'Dukung fase berikutnya',
@@ -330,7 +330,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				{ phase: '03', title: 'Tanam & rawat', description: 'Tanam campuran spesies, siram mingguan, dan catat tumbuh bersama tim lokal.', duration: 'Bulan 2-4' },
 				{ phase: '04', title: 'Lapor & ulangi', description: 'Rilis progres, buka kunjungan, dan pakai data untuk batch selanjutnya.', duration: 'Bulan 5+' },
 			],
-			
+
 			impactTitle: 'Detail Kontribusi Kamu',
 			impactSubtitle: 'Setiap paket membiayai penanaman plus tenaga petani di lapangan',
 			oneTreeCost: 'Rp 50.000',
@@ -367,22 +367,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			urgencyTitle: 'Jangan tunggu musim hujan berikutnya.',
 			urgencyDesc: 'Dukungan hari ini menjaga tanah untuk panen besok.',
 			urgencyCta: '🔥 Mulai Donasi Sekarang',
-			
+
 			locationsTitle: 'Lokasi Penanaman',
 			locationsDesc: 'Fokus awal di Lampung dan Sumatra hasil pemetaan bersama komunitas mitra.',
-			
-			kitabisaTitle: 'Donasi Melalui Kitabisa',
+
+			kitabisaTitle: 'Donasi Melalui Amartha Care to Grow',
 			kitabisaSubtitle: 'Salurkan kontribusi kamu melalui platform terpercaya',
 			kitabisaTrust1: 'Aman & Terpercaya',
-			kitabisaTrust1Desc: 'Platform donasi terpercaya di Indonesia',
+			kitabisaTrust1Desc: 'Platform pemberdayaan terpercaya di Indonesia',
 			kitabisaTrust2: 'Beragam Metode',
 			kitabisaTrust2Desc: 'Transfer bank, e-wallet, kartu kredit',
 			kitabisaTrust3: 'Transparan',
 			kitabisaTrust3Desc: 'Lacak setiap rupiah yang kamu donasikan',
-			kitabisaHashtag: '#KitaHIJAUkanIndonesia #RestorasiLahan',
+			kitabisaHashtag: '#CareToGrow #KitaHIJAUkanIndonesia',
 			kitabisaHashtagDesc: 'Setiap kontribusi kamu berarti untuk Indonesia yang lebih hijau',
 			kitabisaDirectText: 'Atau kunjungi langsung halaman kampanye:',
-			kitabisaDirectBtn: 'Buka di Kitabisa.com →',
+			kitabisaDirectBtn: 'Buka di Amartha →',
 			kitabisaSocial1Title: '📱 Follow Progress Kami',
 			kitabisaSocial1Desc: 'Dapatkan update berkala setiap penanaman dan perkembangan lahan di:',
 			kitabisaSocial2Title: '💬 Ada Pertanyaan?',
