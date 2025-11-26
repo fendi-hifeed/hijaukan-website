@@ -23,7 +23,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
     const handleResize = () => {
       if (iframeRef.current) {
         const width = iframeRef.current.offsetWidth;
-        iframeRef.current.style.height = `${width * 1.2}px`;
+        iframeRef.current.style.height = `${width * 0.55}px`;
       }
     };
 
@@ -84,7 +84,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
                 src={campaignUrl}
                 title="Amartha Care to Grow - KitaHIJAUkan Indonesia"
                 className="w-full border-0"
-                style={{ minHeight: '600px' }}
+                style={{ minHeight: '450px' }}
                 allowFullScreen
                 loading="lazy"
               />
