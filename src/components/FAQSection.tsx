@@ -15,54 +15,78 @@ const FAQSection: React.FC = () => {
   const faqs: Record<'en' | 'id', FAQItem[]> = {
     id: [
       {
-        question: 'Bagaimana cara berdonasi?',
-        answer: 'Kamu bisa berdonasi melalui platform Kitabisa yang tersedia di halaman ini. Pilih paket donasi yang sesuai atau masukkan nominal sesuai kemampuan. Tersedia berbagai metode pembayaran: transfer bank, e-wallet, dan kartu kredit.'
+        question: 'Apa itu KitaHijaukan?',
+        answer: 'KitaHijaukan adalah gerakan restorasi lahan berbasis Circular Economy & Cadangan Karbon. KitaHijaukan berupaya mewujudkan ekosistem lingkungan yang berkelanjutan melalui restorasi lahan dan kontribusi nyata terhadap penyerapan karbon di Indonesia.'
       },
       {
-        question: 'Apakah saya akan mendapatkan laporan donasi?',
-        answer: 'Ya! Semua donatur akan mendapatkan sertifikat digital dan update berkala melalui Instagram @kitahijaukan. Kami dokumentasikan setiap tahap penanaman dan perawatan pohon secara transparan.'
+        question: 'Program apa saja yang ada di KitaHijaukan?',
+        answer: 'Mulai dari penanaman pohon, budidaya tanaman hijau bermanfaat (kayak indigofera), edukasi lingkungan, sampai dukungan untuk petani dan komunitas lokal.'
       },
       {
-        question: 'Di mana pohon akan ditanam?',
-        answer: 'Pohon akan ditanam di lahan-lahan kritis yang telah dipetakan di berbagai wilayah Indonesia, prioritas di daerah yang terdegradasi akibat erosi dan praktik pertanian tidak berkelanjutan. Kami bekerja sama dengan petani lokal dan komunitas.'
+        question: 'Kenapa saya perlu mendukung program KitaHijaukan?',
+        answer: 'Karena setiap pohon yang ditanam dan setiap aksi kecil ikut membantu perbaiki kualitas tanah, kurangi emisi, dan bikin lingkungan lebih sehat buat generasi berikutnya.'
       },
       {
-        question: 'Bagaimana memastikan pohon tumbuh dengan baik?',
-        answer: 'Setiap pohon mendapatkan perawatan intensif selama 1 tahun penuh. Tim kami bersama petani lokal melakukan monitoring rutin, penyiraman, pemupukan, dan pengendalian hama. Update progress bisa dipantau di Instagram kami.'
+        question: 'Bagaimana cara saya berkontribusi?',
+        answer: 'Ikut donasi, ikut kegiatan tanam, bantu sebarin edukasi, atau ajak komunitasmu terlibat.'
       },
       {
-        question: 'Berapa minimal donasi?',
-        answer: 'Tidak ada minimal donasi. Kamu bisa memilih paket Rp 50.000 untuk 1 pohon, Rp 250.000 untuk 5 pohon, atau nominal bebas sesuai kemampuan. Setiap rupiah sangat berarti untuk restorasi lahan Indonesia.'
+        question: 'Apakah program dapat dipantau secara langsung?',
+        answer: 'Ya, kegiatan kami bisa dipantau lewat update rutin—mulai dari progres lapangan, foto, sampai laporan penanaman.'
       },
       {
-        question: 'Apakah donasi saya aman dan legal?',
-        answer: 'Sangat aman! Donasi disalurkan melalui Kitabisa, platform donasi terpercaya di Indonesia. Program ini dijalankan oleh Yayasan Langkah Restorasi Bumi yang legal dan transparan.'
+        question: 'Bagaimana transparansi dan pelaporan dilakukan?',
+        answer: 'Kami sediakan laporan perkembangan, dokumentasi, dan data program yang bisa kamu akses secara terbuka.'
+      },
+      {
+        question: 'Siapa saja mitra yang bekerja sama?',
+        answer: 'Kami bekerja sama dengan petani, komunitas lokal, pemerintah daerah, lembaga lingkungan, dan relawan.'
+      },
+      {
+        question: 'Apakah komunitas bisa berkontribusi dengan kegiatan KitaHijaukan?',
+        answer: 'Bisa banget! Kamu bisa ajak komunitas ikut tanam, kampanye, atau bikin proyek bareng.'
+      },
+      {
+        question: 'Apakah saya bisa mengusulkan program bersama KitaHijaukan?',
+        answer: 'Bisa banget dong. Kamu bisa langsung hubungi tim KitaHijaukan, ceritakan idemu, dan kita lihat bareng cara terbaik ngejalaninnya.'
       }
     ],
     en: [
       {
-        question: 'How do I donate?',
-        answer: 'You can donate through the Kitabisa platform available on this page. Choose a donation package that suits you or enter an amount according to your ability. Various payment methods are available: bank transfer, e-wallet, and credit card.'
+        question: 'What is KitaHijaukan?',
+        answer: 'KitaHijaukan is a land restoration movement built on circular economy and community carbon reserves—turning real contributions into measurable carbon absorption impact in Indonesia.'
       },
       {
-        question: 'Will I receive a donation report?',
-        answer: 'Yes! All donors will receive a digital certificate and regular updates via Instagram @kitahijaukan. We document every stage of tree planting and care transparently.'
+        question: 'What programs does KitaHijaukan run?',
+        answer: 'From tree planting and beneficial green cultivation (like Indigofera), to environmental education and support for local farmers and communities.'
       },
       {
-        question: 'Where will the trees be planted?',
-        answer: 'Trees will be planted on mapped critical lands in various regions of Indonesia, prioritizing areas degraded by erosion and unsustainable agricultural practices. We work together with local farmers and communities.'
+        question: 'Why should I support KitaHijaukan?',
+        answer: 'Because every tree planted and every small action helps restore soil quality, reduce emissions, and build a healthier environment for future generations.'
       },
       {
-        question: 'How do you ensure trees grow well?',
-        answer: 'Each tree receives intensive care for 1 full year. Our team together with local farmers conduct routine monitoring, watering, fertilizing, and pest control. Progress updates can be monitored on our Instagram.'
+        question: 'How can I contribute?',
+        answer: 'Donate, join planting activities, help spread education, or bring your community to get involved.'
       },
       {
-        question: 'What is the minimum donation?',
-        answer: 'There is no minimum donation. You can choose IDR 50,000 package for 1 tree, IDR 250,000 for 5 trees, or any amount according to your ability. Every rupiah really matters for Indonesia\'s land restoration.'
+        question: 'Can I track the program progress?',
+        answer: 'Yes—progress is shared through routine updates, including field progress, photos, and planting reports.'
       },
       {
-        question: 'Is my donation safe and legal?',
-        answer: 'Very safe! Donations are channeled through Kitabisa, a trusted donation platform in Indonesia. This program is run by Yayasan Langkah Restorasi Bumi which is legal and transparent.'
+        question: 'How do transparency and reporting work?',
+        answer: 'We provide progress reports, documentation, and program data that you can access openly.'
+      },
+      {
+        question: 'Who are your partners?',
+        answer: 'We collaborate with farmers, local communities, local governments, environmental organizations, and volunteers.'
+      },
+      {
+        question: 'Can communities contribute?',
+        answer: 'Absolutely—invite your community to plant together, run a campaign, or build a project with us.'
+      },
+      {
+        question: 'Can I propose a joint program?',
+        answer: 'Yes. Reach out to our team, share your idea, and we\'ll explore the best way to run it together.'
       }
     ]
   };

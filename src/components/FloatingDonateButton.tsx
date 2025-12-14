@@ -16,8 +16,11 @@ const FloatingDonateButton: React.FC = () => {
   }, []);
 
   const scrollToDonation = () => {
-    const el = document.getElementById('donation');
-    el?.scrollIntoView({ behavior: 'smooth' });
+    try {
+      window.location.href = '/individual#jajan-karbon';
+    } catch {
+      // no-op
+    }
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).dataLayer = (window as any).dataLayer || [];
