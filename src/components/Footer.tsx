@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslations, useLocale } from "../i18n/LocaleProvider";
 
 const Footer: React.FC = () => {
@@ -8,20 +9,6 @@ const Footer: React.FC = () => {
     return (
     <footer className="bg-hijaukan-gray text-gray-600 py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Partners section */}
-                <div className="mb-16 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('partnersTitle') as string}</h3>
-                  <p className="text-gray-600 max-w-2xl mx-auto mb-6">{t('partnersDesc') as string}</p>
-                  <div className="flex items-center justify-center relative h-20">
-                    <Image 
-                        src="/partner.png" 
-                        alt="Partners" 
-                        height={80}
-                        width={200}
-                        className="object-contain"
-                    />
-                  </div>
-                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="lg:col-span-2">
                         <div className="flex items-center space-x-3 mb-6">
@@ -49,20 +36,43 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                     <div>
-                        <h4 className="text-lg font-bold mb-6 text-hijaukan-green">{t('solutionsMenu') as string}</h4>
+                        <h4 className="text-lg font-bold mb-6 text-hijaukan-green">{locale === 'id' ? 'Program' : 'Programs'}</h4>
                         <ul className="space-y-3">
-                            <li><a href="#solution" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('feedTech') as string}</a></li>
-                            <li><a href="#benefits" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('costReduction') as string}</a></li>
-                            <li><a href="#benefits" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('carbonImpact') as string}</a></li>
-                            <li><a href="#timeline" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('successStories') as string}</a></li>
+                            <li>
+                                <Link href="/individual#jajan-karbon" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {locale === 'id' ? 'Jajan Karbon' : 'Jajan Karbon'}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/individual#eco-carbon-reserve" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {locale === 'id' ? 'Eco-Carbon Reserve' : 'Eco-Carbon Reserve'}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/partnership#sustainatree" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {locale === 'id' ? 'SustainaTree' : 'SustainaTree'}
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-lg font-bold mb-6 text-hijaukan-green">{t('supportMenu') as string}</h4>
+                        <h4 className="text-lg font-bold mb-6 text-hijaukan-green">{locale === 'id' ? 'Dukungan' : 'Support'}</h4>
                         <ul className="space-y-3">
-                            <li><a href="#" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('privacyPolicy') as string}</a></li>
-                            <li><a href="#" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('termsOfService') as string}</a></li>
-                            <li><a href="#consultation" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">{t('contact') as string}</a></li>
+                            <li>
+                                <Link href="/privacy-policy" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {t('privacyPolicy') as string}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/terms" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {t('termsOfService') as string}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" className="text-gray-600 hover:text-hijaukan-green transition-colors scale-hover block">
+                                    {t('contact') as string}
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

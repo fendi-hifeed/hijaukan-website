@@ -50,18 +50,6 @@ const programData: Record<'en' | 'id', ProgramBlock[]> = {
           'Edukasi pakan rendah emisi'
         ],
         tag: 'Publik'
-      },
-      {
-        id: 'carbon-pet',
-        icon: '🌲',
-        title: 'Carbon Pet',
-        goal: 'Adopsi pohon bergaya gamifikasi selama 1 tahun.',
-        keyPoints: [
-          'Pantau via GPS & cerita singkat',
-          'Skema cicil per 3 bulan',
-          'Bangun kedekatan emosional'
-        ],
-        tag: 'Adopsi'
       }
     ],
     en: [
@@ -100,18 +88,6 @@ const programData: Record<'en' | 'id', ProgramBlock[]> = {
           'Low-emission feed education'
         ],
         tag: 'Public'
-      },
-      {
-        id: 'carbon-pet',
-        icon: '🌲',
-        title: 'Carbon Pet',
-        goal: 'Adopt-a-tree with a playful one-year journey.',
-        keyPoints: [
-          'GPS check-ins & short stories',
-          'Quarterly installment option',
-          'Build emotional connection'
-        ],
-        tag: 'Adoption'
       }
     ]
   };
