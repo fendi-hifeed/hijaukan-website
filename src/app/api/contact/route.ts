@@ -31,7 +31,7 @@ export async function POST(request: Request) {
                     type: "header",
                     text: {
                         type: "plain_text",
-                        text: "📩 Pesan Baru dari Website",
+                        text: "📩 Pesan Baru dari Website www.kitahijaukan.com",
                         emoji: true
                     }
                 },

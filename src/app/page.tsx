@@ -7,7 +7,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DonationHero from "../components/DonationHero";
 import FloatingDonateButton from "../components/FloatingDonateButton";
-import ContextSection from "../components/ContextSection";
 import { useLocale } from "../i18n/LocaleProvider";
 
 export default function Home() {
@@ -17,13 +16,13 @@ export default function Home() {
     <>
       <Header />
       <main className="min-h-screen bg-white pt-16">
-
+        
         {/* SECTION 1: Care to Grow Hero with Video on Desktop */}
         <section className="relative py-16 px-4 bg-gradient-to-br from-hijaukan-light/30 via-white to-hijaukan-green/10 overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-72 h-72 bg-hijaukan-green/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-hijaukan-light/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
+          
           <div className="relative max-w-7xl mx-auto">
             {/* Grid layout: text on left, video on right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -32,16 +31,16 @@ export default function Home() {
                 <div className="inline-block px-4 py-2 bg-hijaukan-green/10 rounded-full text-hijaukan-green text-sm font-medium mb-3">
                   🌱 {locale === 'id' ? 'Bersama Kita Hijaukan Indonesia' : 'Together We Green Indonesia'}
                 </div>
-
+                
                 <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-hijaukan-green via-hijaukan-dark to-hijaukan-green bg-clip-text text-transparent leading-tight">
                   Care to Grow
                 </h1>
                 <p className="text-gray-600 text-lg">
-                  {locale === 'id'
-                    ? 'Wujudkan Ekosistem Berkelanjutan Sekarang!'
+                  {locale === 'id' 
+                    ? 'Wujudkan Ekosistem Berkelanjutan Sekarang!' 
                     : 'Build a Sustainable Ecosystem Now!'}
                 </p>
-
+                
                 {/* 3 CTA Buttons */}
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start pt-4">
                   <Link
@@ -90,26 +89,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 1.5: CONTEXT SECTION */}
-        <ContextSection />
-
         {/* SECTION 2: PROGRAM KITA HIJAUKAN */}
         <section className="py-16 px-4 bg-hijaukan-green">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
               PROGRAM KITA HIJAUKAN
             </h2>
-
+            
             <div className="grid md:grid-cols-3 gap-6">
               {/* Jajan Karbon */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-hijaukan-dark mb-3">Jajan Karbon</h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  {locale === 'id'
+                  {locale === 'id' 
                     ? 'Didedikasikan untuk membiayai satu unit bibit Indigofera dan biaya operasional target 10.000 bibit/ha'
                     : 'Dedicated to funding one Indigofera seedling unit and operational costs targeting 10,000 seedlings/ha'}
                 </p>
-                <Link
+                <Link 
                   href="/individual#jajan-karbon"
                   className="inline-block bg-hijaukan-green text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-hijaukan-dark transition-colors"
                 >
@@ -125,7 +121,7 @@ export default function Home() {
                     ? 'Didedikasikan untuk biaya pemeliharaan suatu lahan yang sudah ditanami bibit sebanyak 2.4 ha'
                     : 'Dedicated to maintenance costs for land already planted with seedlings covering 2.4 ha'}
                 </p>
-                <Link
+                <Link 
                   href="/individual#eco-carbon-reserve"
                   className="inline-block bg-hijaukan-green text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-hijaukan-dark transition-colors"
                 >
@@ -141,7 +137,7 @@ export default function Home() {
                     ? 'Program kolaboratif dan partisipatif dengan korporasi untuk melakukan penanaman pohon yang berkelanjutan, transparan dan mudah'
                     : 'Collaborative and participatory program with corporations for sustainable, transparent and easy tree planting'}
                 </p>
-                <Link
+                <Link 
                   href="/partnership#sustainatree"
                   className="inline-block bg-hijaukan-green text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-hijaukan-dark transition-colors"
                 >
@@ -158,12 +154,12 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
               PANTAU DAMPAK NYATA KAMI
             </h2>
-
+            
             {/* Illustration */}
             <div className="flex justify-center mb-8">
-              <Image
-                src="/E_WEB_15.png"
-                alt="Impact illustration"
+              <Image 
+                src="/E_WEB_15.png" 
+                alt="Impact illustration" 
                 width={120}
                 height={120}
                 className="w-28 h-28 object-contain"
@@ -197,8 +193,8 @@ export default function Home() {
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-hijaukan-dark mb-3">DETAIL KONTRIBUSI</h2>
               <p className="text-gray-600">
-                {locale === 'id'
-                  ? 'Jajan Karbon setara dengan Jajan Kopi! Ini dia detail kontribusimu.'
+                {locale === 'id' 
+                  ? 'Jajan Karbon setara dengan Jajan Kopi! Ini dia detail kontribusimu.' 
                   : 'Jajan Karbon equals a cup of coffee! Here are your contribution details.'}
               </p>
             </div>
@@ -207,32 +203,32 @@ export default function Home() {
               <div className="bg-hijaukan-green text-white rounded-2xl p-6">
                 <h3 className="text-lg font-bold mb-2">1 Pohon = Rp 30.000</h3>
                 <p className="text-white/90 text-sm">
-                  {locale === 'id'
-                    ? '1 bibit indigofera, biaya tanam dan perawatan selama 1 tahun'
+                  {locale === 'id' 
+                    ? '1 bibit indigofera, biaya tanam dan perawatan selama 1 tahun' 
                     : '1 Indigofera seedling, planting and care costs for 1 year'}
                 </p>
               </div>
               <div className="bg-hijaukan-green text-white rounded-2xl p-6">
                 <h3 className="text-lg font-bold mb-2">{locale === 'id' ? 'Penyerap Metana & CO₂' : 'Methane & CO₂ Absorber'}</h3>
                 <p className="text-white/90 text-sm">
-                  {locale === 'id'
-                    ? 'Setiap hektar indigofera mampu menyerap hingga 20 ton CO₂ per tahun!'
+                  {locale === 'id' 
+                    ? 'Setiap hektar indigofera mampu menyerap hingga 20 ton CO₂ per tahun!' 
                     : 'Each hectare of Indigofera can absorb up to 20 tons of CO₂ per year!'}
                 </p>
               </div>
               <div className="bg-hijaukan-green text-white rounded-2xl p-6">
                 <h3 className="text-lg font-bold mb-2">{locale === 'id' ? 'Memberdayakan petani lokal' : 'Empowering Local Farmers'}</h3>
                 <p className="text-white/90 text-sm">
-                  {locale === 'id'
-                    ? 'Untuk menanam, merawat, dan memantau pertumbuhannya.'
+                  {locale === 'id' 
+                    ? 'Untuk menanam, merawat, dan memantau pertumbuhannya.' 
                     : 'To plant, care for, and monitor growth.'}
                 </p>
               </div>
               <div className="bg-hijaukan-green text-white rounded-2xl p-6">
                 <h3 className="text-lg font-bold mb-2">{locale === 'id' ? 'Target 1.000 Hektar' : '1,000 Hectares Target'}</h3>
                 <p className="text-white/90 text-sm">
-                  {locale === 'id'
-                    ? 'Bantu wujudkan kembali 1.000 hektar lahan hijau'
+                  {locale === 'id' 
+                    ? 'Bantu wujudkan kembali 1.000 hektar lahan hijau' 
                     : 'Help restore 1,000 hectares of green land'}
                 </p>
               </div>
