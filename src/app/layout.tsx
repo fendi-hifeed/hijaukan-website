@@ -15,18 +15,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const initialLocale: "en" | "id" = saved ?? (country === "ID" ? "id" : "en");
 
   const enDesc =
-    "Support KitaHIJAUkan's land restoration campaign. Help restore degraded land, plant trees with care, and build a greener, climate-resilient Indonesia.";
+    "Support KitaHijaukan's land restoration campaign. Help restore degraded land, plant trees with care, and build a greener, climate-resilient Indonesia.";
   const idDesc =
-    "Dukung kampanye restorasi lahan KitaHIJAUkan. Bantu pulihkan lahan terdegradasi, tanam pohon dengan perawatan, dan wujudkan Indonesia yang lebih hijau dan tangguh iklim.";
+    "Dukung kampanye restorasi lahan KitaHijaukan. Bantu pulihkan lahan terdegradasi, tanam pohon dengan perawatan, dan wujudkan Indonesia yang lebih hijau dan tangguh iklim.";
   const description = initialLocale === "id" ? idDesc : enDesc;
   const ogLocale = initialLocale === "id" ? "id_ID" : "en_US";
 
   return {
-  title: "KitaHIJAUkan - Restorasi Lahan Berkelanjutan",
+    title: "KitaHijaukan - Restorasi Lahan Berkelanjutan",
     description,
     themeColor: "#00AB7E",
-  metadataBase: new URL(siteUrl),
-  applicationName: "KitaHIJAUkan",
+    metadataBase: new URL(siteUrl),
+    applicationName: "KitaHijaukan",
     keywords: [
       "HIJAUkan",
       "restorasi lahan",
@@ -48,8 +48,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: "/",
-  siteName: "KitaHIJAUkan",
-  title: "KitaHIJAUkan - Restorasi Lahan Berkelanjutan",
+      siteName: "KitaHijaukan",
+      title: "KitaHijaukan - Restorasi Lahan Berkelanjutan",
       description,
       locale: ogLocale,
       images: [
@@ -57,19 +57,19 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "/hijaukan-cattle.jpg",
           width: 1200,
           height: 630,
-          alt: "KitaHIJAUkan - Land Restoration Campaign",
+          alt: "KitaHijaukan - Land Restoration Campaign",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-  site: "@hijaukan",
-  title: "KitaHIJAUkan - Restorasi Lahan Berkelanjutan",
+      site: "@hijaukan",
+      title: "KitaHijaukan - Restorasi Lahan Berkelanjutan",
       description,
       images: [
         {
           url: "/hijaukan-cattle.jpg",
-          alt: "KitaHIJAUkan - Land Restoration Campaign",
+          alt: "KitaHijaukan - Land Restoration Campaign",
         },
       ],
     },
@@ -109,26 +109,26 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  {/* Canonical + hreflang for search engines */}
-  <link rel="canonical" href={siteUrl} />
-  <link rel="alternate" hrefLang="id" href={`${siteUrl}/?hl=id`} />
-  <link rel="alternate" hrefLang="en" href={`${siteUrl}/?hl=en`} />
-  <link rel="alternate" hrefLang="x-default" href={siteUrl} />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {/* Canonical + hreflang for search engines */}
+        <link rel="canonical" href={siteUrl} />
+        <link rel="alternate" hrefLang="id" href={`${siteUrl}/?hl=id`} />
+        <link rel="alternate" hrefLang="en" href={`${siteUrl}/?hl=en`} />
+        <link rel="alternate" hrefLang="x-default" href={siteUrl} />
 
-  {/* JSON-LD Structured Data */}
-    <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">{JSON.stringify({
+        {/* JSON-LD Structured Data */}
+        <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "KitaHIJAUkan - Yayasan Langkah Restorasi Bumi",
-            url: siteUrl,
-            logo: `${siteUrl}/hijaukan_logo.png`,
+          name: "KitaHijaukan - Yayasan Langkah Restorasi Bumi",
+          url: siteUrl,
+          logo: `${siteUrl}/hijaukan_logo.png`,
           sameAs: ["https://instagram.com/kitahijaukan"],
         })}</Script>
         <Script id="ld-website" type="application/ld+json" strategy="afterInteractive">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "KitaHIJAUkan",
+          name: "KitaHijaukan",
           url: siteUrl,
           inLanguage: initialLocale,
           potentialAction: {

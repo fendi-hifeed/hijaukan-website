@@ -86,7 +86,7 @@ export default function IndividualPage() {
                 src="/E_WEB_04.png"
                 alt="Map Lampung"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>

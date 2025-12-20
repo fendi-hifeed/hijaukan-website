@@ -66,14 +66,14 @@ const Header: React.FC = () => {
     ];
 
     return (
-    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-hijaukan-light">
+        <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-hijaukan-light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link href="/" className="flex items-center space-x-3 cursor-pointer" onClick={closeMenu}>
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center bounce-gentle overflow-hidden relative">
-                            <Image 
-                                src="/hijaukan_logo.png" 
-                                alt="KitaHIJAUkan logo" 
+                            <Image
+                                src="/hijaukan_logo.png"
+                                alt="KitaHijaukan logo"
                                 fill
                                 className="object-contain"
                                 sizes="(max-width: 640px) 48px, 64px"
@@ -85,10 +85,10 @@ const Header: React.FC = () => {
                         <NavGroup label={locale === 'id' ? 'About us' : 'About us'} items={aboutItems} />
                         <NavGroup label={locale === 'id' ? 'Individual' : 'Individual'} items={individualItems} />
                         <NavGroup label={locale === 'id' ? 'Partnership' : 'Partnership'} items={partnershipItems} />
-                                                <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-hijaukan-light">
-                                                    <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
-                                                    <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
-                                                </div>
+                        <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-hijaukan-light">
+                            <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale === 'id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
+                            <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale === 'en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
+                        </div>
                         <Link
                             href="/individual#jajan-karbon"
                             aria-label={locale === 'id' ? 'Donasi Sekarang' : 'Donate Now'}
@@ -100,8 +100,8 @@ const Header: React.FC = () => {
                     </div>
                     <div className="md:hidden flex items-center gap-2">
                         <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-hijaukan-light">
-                            <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale==='id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
-                            <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale==='en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
+                            <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale === 'id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
+                            <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale === 'en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
                         </div>
 
                         {/* Mobile Donate button placed left of menu toggle */}
