@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
         // Format pesan untuk Slack
         const slackMessage = {
-            text: "📩 Pesan Baru dari Website KitaHIJAUkan",
+            text: "📩 Pesan Baru dari Website KitaHijaukan",
             blocks: [
                 {
                     type: "header",

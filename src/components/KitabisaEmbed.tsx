@@ -82,7 +82,7 @@ const KitabisaEmbed: React.FC<KitabisaEmbedProps> = ({
               <iframe
                 ref={iframeRef}
                 src={campaignUrl}
-                title="Amartha Care to Grow - KitaHIJAUkan Indonesia"
+                title="Amartha Care to Grow - KitaHijaukan Indonesia"
                 className="w-full border-0"
                 style={{ minHeight: '450px' }}
                 allowFullScreen

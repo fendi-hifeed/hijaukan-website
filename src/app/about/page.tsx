@@ -34,7 +34,7 @@ export default function AboutPage() {
                 src="/E_WEB_01.png"
                 alt="About KitaHijaukan"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>

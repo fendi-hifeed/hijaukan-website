@@ -46,7 +46,7 @@ export default function PartnershipPage() {
                 src="/E_WEB_11.png"
                 alt="SustainaTree"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function PartnershipPage() {
                 src="/E_WEB_12.png"
                 alt="CommuniTree"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
