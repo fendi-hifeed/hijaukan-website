@@ -98,3 +98,5 @@ const ProgramsSection: React.FC = () => {
 };
 
 export default ProgramsSection;
+
+export default ProgramsSection;
