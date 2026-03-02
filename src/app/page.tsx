@@ -194,6 +194,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Teaser: Latest Project Update */}
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-hijaukan-light/30 to-hijaukan-green/10 rounded-3xl p-8 md:p-12 shadow-sm border border-hijaukan-green/20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-hijaukan-green/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+
+              <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="inline-block px-4 py-2 bg-hijaukan-green/10 rounded-full text-hijaukan-green text-sm font-medium mb-4">
+                    📢 {locale === 'id' ? 'Laporan Terbaru' : 'Latest Report'}
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-hijaukan-dark mb-4">
+                    {locale === 'id' ? 'Proyeksi Sekuestrasi Karbon: Jurangjero' : 'Carbon Sequestration Projections: Jurangjero'}
+                  </h2>
+                  <p className="text-gray-600 mb-6">
+                    {locale === 'id'
+                      ? 'Kami telah merampungkan analisis cadangan karbon Above Ground (ABG) untuk inisiatif penanaman KitaHijaukan x Jogja Kelana. Lihat proyeksi dampak kita selama 30 tahun ke depan!'
+                      : "We've finalized the Above Ground (ABG) carbon stock analysis for the KitaHijaukan x Jogja Kelana planting initiative. See our projected impact over the next 30 years!"}
+                  </p>
+                  <Link
+                    href="/reports/jurangjero-feb-2026"
+                    className="inline-flex items-center gap-2 bg-hijaukan-green hover:bg-hijaukan-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    {locale === 'id' ? 'Baca Laporan Lengkap' : 'Read Full Report'}
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300">
+                    <p className="text-sm text-gray-500 mb-1">{locale === 'id' ? 'Total Cadangan Karbon (tC)' : 'Total Carbon Stock (tC)'}</p>
+                    <p className="text-3xl font-bold text-hijaukan-green">2.067</p>
+                    <p className="text-xs text-gray-400 mt-1">{locale === 'id' ? 'Proyeksi 30 Tahun' : '30-Year Projection'}</p>
+                  </div>
+                  <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300">
+                    <p className="text-sm text-gray-500 mb-1">{locale === 'id' ? 'Total Penyerapan CO2e' : 'Total CO2e Sequestration'}</p>
+                    <p className="text-3xl font-bold text-hijaukan-green">7.579 <span className="text-lg font-normal">Ton</span></p>
+                    <p className="text-xs text-gray-400 mt-1">{locale === 'id' ? 'Tahun Ke-30' : 'By Year 30'}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 5: Our Mitra */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">

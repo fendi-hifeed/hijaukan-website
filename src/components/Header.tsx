@@ -65,6 +65,10 @@ const Header: React.FC = () => {
         { href: '/partnership#communitree', label: locale === 'id' ? 'CommuniTree Program' : 'CommuniTree Program' },
     ];
 
+    const reportItems = [
+        { href: '/reports/jurangjero-feb-2026', label: locale === 'id' ? 'Laporan Jurangjero' : 'Jurangjero Report' },
+    ];
+
     return (
         <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-hijaukan-light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,6 +89,7 @@ const Header: React.FC = () => {
                         <NavGroup label={locale === 'id' ? 'About us' : 'About us'} items={aboutItems} />
                         <NavGroup label={locale === 'id' ? 'Individual' : 'Individual'} items={individualItems} />
                         <NavGroup label={locale === 'id' ? 'Partnership' : 'Partnership'} items={partnershipItems} />
+                        <NavGroup label="Impact Report" items={reportItems} />
                         <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-hijaukan-light">
                             <button onClick={() => setLocale('id')} className={`px-2 py-1 rounded-full text-sm ${locale === 'id' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>ID</button>
                             <button onClick={() => setLocale('en')} className={`px-2 py-1 rounded-full text-sm ${locale === 'en' ? 'bg-hijaukan-green text-white' : 'text-gray-600 hover:text-hijaukan-green'}`}>EN</button>
@@ -159,6 +164,20 @@ const Header: React.FC = () => {
                             </summary>
                             <div className="px-2 pb-2">
                                 {partnershipItems.map((item) => (
+                                    <Link key={item.href} href={item.href} onClick={closeMenu} className="block px-3 py-2 rounded-lg text-gray-600 hover:text-hijaukan-green hover:bg-hijaukan-light/30">
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </details>
+
+                        <details className="group rounded-xl border border-hijaukan-light">
+                            <summary className="cursor-pointer list-none px-4 py-3 font-semibold text-gray-700 flex items-center justify-between">
+                                <span>Impact Report</span>
+                                <span className="text-gray-400 group-open:rotate-180 transition-transform">▾</span>
+                            </summary>
+                            <div className="px-2 pb-2">
+                                {reportItems.map((item) => (
                                     <Link key={item.href} href={item.href} onClick={closeMenu} className="block px-3 py-2 rounded-lg text-gray-600 hover:text-hijaukan-green hover:bg-hijaukan-light/30">
                                         {item.label}
                                     </Link>
