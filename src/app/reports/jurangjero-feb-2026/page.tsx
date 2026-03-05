@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import { useLocale } from "../../../i18n/LocaleProvider";
@@ -33,6 +34,42 @@ export default function JurangjeroReportPage() {
                                     ? 'Kami telah merampungkan analisis cadangan karbon Above Ground (ABG) untuk inisiatif penanaman KitaHijaukan x Jogja Kelana pada 14 Feb 2026. Berikut adalah rincian proyeksi dampak yang dihasilkan selama siklus hidup 30 tahun.'
                                     : "We’ve finalized the Above Ground (ABG) carbon stock analysis for the KitaHijaukan x Jogja Kelana planting initiative event on 14 Feb 26. Here is the breakdown of our projected impact over the 30-year lifecycle."}
                             </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* EVENT DOCUMENTATION GALLERY */}
+                <section className="max-w-6xl mx-auto px-4 mb-16">
+                    <div className="flex items-center gap-3 mb-8">
+                        <div className="w-12 h-12 rounded-full bg-hijaukan-green/10 flex items-center justify-center text-hijaukan-green text-2xl">
+                            📸
+                        </div>
+                        <h2 className="text-3xl font-bold text-gray-800">
+                            {locale === 'id' ? 'Dokumentasi Kegiatan' : 'Event Documentation'}
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+                        {/* Large Main Real Image */}
+                        <div className="col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-sm group border border-gray-100 bg-gray-100">
+                            <Image src="/jurangjero/DSCF5144 Copy of DSCF4867.JPG" alt="Planting Event Jurangjero" width={800} height={800} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+
+                        {/* Top Right Grid */}
+                        <div className="col-span-2 md:col-span-1 rounded-3xl overflow-hidden shadow-sm group border border-gray-100 bg-gray-100">
+                            <Image src="/jurangjero/DSCF5144.JPG" alt="Volunteers" width={400} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        <div className="col-span-2 md:col-span-1 rounded-3xl overflow-hidden shadow-sm group border border-gray-100 bg-gray-100">
+                            <Image src="/jurangjero/Copy of DSCF4895.JPG" alt="Planting" width={400} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+
+                        {/* Bottom Row */}
+                        <div className="col-span-2 md:col-span-1 rounded-3xl overflow-hidden shadow-sm group border border-gray-100 bg-gray-100">
+                            <Image src="/jurangjero/DSCF5118.JPG" alt="Conservation Activity" width={400} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                        {/* AI Generated Image mixed with Real */}
+                        <div className="col-span-2 md:col-span-1 rounded-3xl overflow-hidden shadow-sm group border border-gray-100 bg-gray-100 relative">
+                            <Image src="/jurangjero/DSCF5157 2.JPG" alt="Jurangjero Volunteers Plant" width={400} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         </div>
                     </div>
                 </section>
