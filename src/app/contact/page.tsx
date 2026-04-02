@@ -81,8 +81,8 @@ export default function ContactPage() {
                   <p className="text-gray-600 mb-6">Pondok Pinang, Kebayoran Lama, Jakarta Selatan</p>
 
                   <div className="space-y-2">
-                    <p className="text-gray-600"><span className="font-semibold text-gray-900">Email:</span> langkahrestorasibumi@gmail.com</p>
-                    <p className="text-gray-600"><span className="font-semibold text-gray-900">{locale === 'id' ? 'Telepon' : 'Phone'}:</span> 081809786141</p>
+                    <p className="text-gray-600"><span className="font-semibold text-gray-900">Email:</span> <a href="mailto:partnership@kitahijaukan.com" className="hover:text-hijaukan-green">partnership@kitahijaukan.com</a></p>
+                    <p className="text-gray-600"><span className="font-semibold text-gray-900">{locale === 'id' ? 'Telepon' : 'Phone'}:</span> <a href="https://wa.me/6285117626252?text=Halo%20KitaHijaukan%2C%20saya%20ingin%20bertanya%20tentang%20program%20Anda." className="hover:text-hijaukan-green">085117626252</a></p>
                   </div>
                 </div>
               </div>

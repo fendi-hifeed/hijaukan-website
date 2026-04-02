@@ -1,13 +1,40 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useLocale } from "../../i18n/LocaleProvider";
+import { CheckCircle, Loader2 } from "lucide-react";
 
 export default function PartnershipPage() {
   const { locale } = useLocale();
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/partnership', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error();
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
 
   return (
     <>
@@ -85,8 +112,8 @@ export default function PartnershipPage() {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold">Let&apos;s Collaborate</h2>
               <div className="space-y-2 text-sm">
-                <p>Email: langkahrestorasibumi@gmail.com</p>
-                <p>Telepon: 081809786141</p>
+                <p>Email: <a href="mailto:partnership@kitahijaukan.com" className="underline hover:text-white/80">partnership@kitahijaukan.com</a></p>
+                <p>Telepon: <a href="https://wa.me/6285117626252?text=Halo%20KitaHijaukan%2C%20saya%20ingin%20bertanya%20tentang%20program%20partnership." className="underline hover:text-white/80">085117626252</a></p>
                 <p>Alamat:</p>
                 <p>Plaza Aminta lantai 5/505, Jl TB Simatupang kav. 10, Pondok Pinang, Kebayoran Lama, Jakarta Selatan. DKI Jakarta</p>
               </div>
@@ -101,30 +128,42 @@ export default function PartnershipPage() {
                   : '*After filling the form, our team will contact you within 24 hours.'}
               </p>
             </div>
-            <div className="bg-hijaukan-green rounded-2xl p-6 space-y-4">
-              <div>
-                <label className="block text-sm mb-1">{locale === 'id' ? 'Nama' : 'Name'}</label>
-                <input type="text" className="w-full rounded-lg border-0 px-4 py-2 text-gray-800" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Email</label>
-                <input type="email" className="w-full rounded-lg border-0 px-4 py-2 text-gray-800" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">No. Handphone</label>
-                <input type="tel" className="w-full rounded-lg border-0 px-4 py-2 text-gray-800" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">{locale === 'id' ? 'Nama Perusahaan' : 'Company Name'}</label>
-                <input type="text" className="w-full rounded-lg border-0 px-4 py-2 text-gray-800" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">{locale === 'id' ? 'Sampaikan yang Anda butuhkan disini' : 'Tell us what you need'}</label>
-                <textarea rows={3} className="w-full rounded-lg border-0 px-4 py-2 text-gray-800" />
-              </div>
-              <button className="w-full bg-white text-hijaukan-green font-bold py-3 rounded-xl hover:bg-hijaukan-light transition-colors">
-                {locale === 'id' ? 'Kirim' : 'Submit'}
-              </button>
+            <div className="bg-hijaukan-green rounded-2xl p-4 sm:p-6 md:p-8 space-y-4 relative overflow-hidden">
+              {status === 'success' && (
+                <div className="absolute inset-0 bg-hijaukan-green z-10 flex flex-col items-center justify-center text-center p-6">
+                  <CheckCircle size={48} className="text-white mb-3" />
+                  <h3 className="text-xl font-bold text-white mb-2">{locale === 'id' ? 'Terkirim!' : 'Sent!'}</h3>
+                  <p className="text-white/80 text-sm">{locale === 'id' ? 'Tim kami akan menghubungi Anda dalam 24 jam.' : 'Our team will contact you within 24 hours.'}</p>
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm mb-1">{locale === 'id' ? 'Nama' : 'Name'} *</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full rounded-lg border-0 px-4 py-2.5 text-gray-800" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Email *</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full rounded-lg border-0 px-4 py-2.5 text-gray-800" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">No. Handphone</label>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full rounded-lg border-0 px-4 py-2.5 text-gray-800" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">{locale === 'id' ? 'Nama Perusahaan' : 'Company Name'}</label>
+                  <input type="text" name="company" value={formData.company} onChange={handleChange} className="w-full rounded-lg border-0 px-4 py-2.5 text-gray-800" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">{locale === 'id' ? 'Sampaikan yang Anda butuhkan disini' : 'Tell us what you need'} *</label>
+                  <textarea rows={3} name="message" value={formData.message} onChange={handleChange} required className="w-full rounded-lg border-0 px-4 py-2.5 text-gray-800" />
+                </div>
+                <button type="submit" disabled={status === 'loading'} className="w-full bg-white text-hijaukan-green font-bold py-3 rounded-xl hover:bg-hijaukan-light transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                  {status === 'loading' ? <><Loader2 size={18} className="animate-spin" /> {locale === 'id' ? 'Mengirim...' : 'Sending...'}</> : (locale === 'id' ? 'Kirim' : 'Submit')}
+                </button>
+                {status === 'error' && (
+                  <p className="text-red-200 text-sm text-center">{locale === 'id' ? 'Gagal mengirim. Coba lagi.' : 'Failed to send. Try again.'}</p>
+                )}
+              </form>
             </div>
           </div>
         </section>
