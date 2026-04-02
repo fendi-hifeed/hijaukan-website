@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -11,6 +11,17 @@ export default function PartnershipPage() {
   const { locale } = useLocale();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  // Load cached form data
+  useEffect(() => {
+    try {
+      const cached = localStorage.getItem('hijaukan_form_data');
+      if (cached) {
+        const data = JSON.parse(cached);
+        setFormData(prev => ({ ...prev, ...data, message: '' }));
+      }
+    } catch { /* ignore */ }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,6 +38,10 @@ export default function PartnershipPage() {
         body: JSON.stringify(formData),
       });
       if (!res.ok) throw new Error();
+      // Cache form data for next time
+      try {
+        localStorage.setItem('hijaukan_form_data', JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, company: formData.company }));
+      } catch { /* ignore */ }
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);

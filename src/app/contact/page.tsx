@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useLocale } from "../../i18n/LocaleProvider";
@@ -16,6 +16,17 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Load cached form data
+  useEffect(() => {
+    try {
+      const cached = localStorage.getItem('hijaukan_form_data');
+      if (cached) {
+        const data = JSON.parse(cached);
+        setFormData(prev => ({ ...prev, name: data.name || '', email: data.email || '' }));
+      }
+    } catch { /* ignore */ }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -38,6 +49,11 @@ export default function ContactPage() {
       if (!response.ok) {
         throw new Error(data.error || "Terjadi kesalahan");
       }
+
+      // Cache form data for next time
+      try {
+        localStorage.setItem('hijaukan_form_data', JSON.stringify({ name: formData.name, email: formData.email }));
+      } catch { /* ignore */ }
 
       setStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
