@@ -152,11 +152,12 @@ export default async function RootLayout({
         {/* End Google Tag Manager */}
 
         {/* Google tag (gtag.js) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-FLJH7FKJ1D" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-J2QZ8TTG8C" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);} 
           gtag('js', new Date());
+          gtag('config', 'G-J2QZ8TTG8C');
           gtag('config', 'G-FLJH7FKJ1D');
         `}</Script>
         {/* End Google tag (gtag.js) */}
